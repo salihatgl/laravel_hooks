@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Livewire\CreateUser;
+use App\Livewire\SimpleComponent;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,10 +15,5 @@ use App\Livewire\CreateUser;
 |
 */
 
-Route::get('/simple-component', function () {
-   return view('livewire.simple-component', ['message' => 'Merhaba, bu bir basit Livewire bileşeni örneğidir.']);
- });
- Route::get('/example', function () {
-  return view('create-user');
-});
+ Route::get('/mesaj', SimpleComponent::class)->name('setMessage');
 Route::get('/sayac', CreateUser::class)->name('sayac');

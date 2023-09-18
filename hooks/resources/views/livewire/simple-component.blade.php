@@ -1,5 +1,3 @@
-
-    <div>
-        <h1>{{ $message }}</h1>
-    </div>
-
+<div>
+    <p>{{ $message }}</p>
+</div>
