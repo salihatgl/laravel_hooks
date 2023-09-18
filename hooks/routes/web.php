@@ -1,5 +1,6 @@
 <?php
 
+use App\Livewire\CreateSayac;
 use Illuminate\Support\Facades\Route;
 use App\Livewire\CreateUser;
 use App\Livewire\SimpleComponent;
@@ -16,4 +17,4 @@ use App\Livewire\SimpleComponent;
 */
 
  Route::get('/mesaj', SimpleComponent::class)->name('setMessage');
-Route::get('/sayac', CreateUser::class)->name('sayac');
+Route::get('/sayac', CreateSayac::class);

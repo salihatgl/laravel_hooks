@@ -1,14 +1,17 @@
 <?php
 
 namespace App\Livewire;
-use app\Models\User;
-
 use Livewire\Component;
 
-class CreateUser extends Component
+class CreateSayac extends Component
 {
     public $count = 0;
 
+    public function mount()
+    {
+        
+        $this->count = 10; 
+    }
     public function increment()
     {
         $this->count++;
@@ -16,20 +19,16 @@ class CreateUser extends Component
 
     public function decrement()
     {
-        $this->count--;
+        $this->count = $this->count - 6;
     }
     public function hydrate()
     {
 
-    $this->count;
+        $this->count = $this->count + 5;
     }
-    public function update()
-    {
-    }
-
-   
+    
     public function render()
     {
-        return view('livewire.create-user');
+        return view('livewire.create-sayac');
     }
 }
