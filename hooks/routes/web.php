@@ -16,5 +16,5 @@ use App\Livewire\SimpleComponent;
 |
 */
 
- Route::get('/mesaj', SimpleComponent::class)->name('setMessage');
+ Route::get('/mesaj', SimpleComponent::class);
 Route::get('/sayac', CreateSayac::class);

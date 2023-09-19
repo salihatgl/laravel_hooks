@@ -3,24 +3,34 @@
 namespace App\Livewire;
 
 use Livewire\Component;
-use app\Http\Controllers\SimpleComponentController;
+use App\Models\UserHook;
 
 class SimpleComponent extends Component
-{
-    public $message;
 
-    public function mount()
+{
+    public $username = ' ';
+    public $email = ' ';
+    
+    public function updatedUsername()
     {
-        $this->setMessage();
+        $this->username = strtolower($this->username);
     }
 
-    private function setMessage()
+    public function save()
     {
-        $this->message = 'Merhaba bu bir basit Livewire bileşeni örneğidir.';
+        
+        UserHook::create([
+            'username' => $this->username,
+            'email' => $this->email,
+        ]);
+
+        return redirect()->to('/mesaj');
     }
 
     public function render()
     {
-        return view('livewire.simple-component', ['message' => $this->message]);
+        return view('livewire.simple-component');
     }
 }
+
+    
